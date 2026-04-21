@@ -1,0 +1,38 @@
+{
+  "name": "@ectropy/federation",
+  "version": "0.1.0",
+  "description": "BIM model federation primitive for construction intelligence",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/**/*.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ectropy-ai/core.git",
+    "directory": "packages/federation"
+  },
+  "keywords": [
+    "ectropy",
+    "bim",
+    "federation",
+    "construction"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
