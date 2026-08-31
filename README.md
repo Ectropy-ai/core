@@ -53,9 +53,12 @@ compiled-publish workflow.
 
 ## Schema Dependency
 
-Core packages consume types from
-[@ectropy/schemas](https://github.com/ectropy-ai/schemas)
-via GitHub pin.
+Planned, not yet wired: no package in this monorepo currently declares or
+imports [@ectropy/schemas](https://github.com/ectropy-ai/schemas) (verified
+2026-08-31 — zero `package.json` dependency entries, zero source imports).
+The intent is for core packages to consume types from it via GitHub pin,
+matching the pattern above; this section will be updated once that
+dependency is actually landed.
 
 ## License
 
