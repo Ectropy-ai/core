@@ -21,7 +21,7 @@ Status below).
 - Tagged release: `v0.1.0` (single tag; all 7 packages at `0.1.0`).
 - Workspace: pnpm 9.15.9, Node >= 20, TypeScript strict, `pnpm -r typecheck` / `pnpm -r lint` at the root.
 - Maturity varies by package: `rls` and `clash` have working implementations and tests; `federation` and `mcp-client` are single-file primitives; `ifc` and `ai-provider` have the most built out (multi-file, with tests).
-- No repo in the local Ectropy-ai/LuhTech portfolio currently pins `core` as a live GitHub dependency. `Ectropy-Business` vendors `@ectropy/rls` and `@ectropy/ai-provider` as static copies (`git archive v0.1.0`, commit `0cd7f7c3`, synced 2026-04-21) instead — the GitHub-pin install below is known to fail for real consumers: Nx's pruned lockfile rejects `&path:` specifiers, these packages ship raw TypeScript rather than compiled `dist/`, and Alpine-based Docker images lack `git`, so `pnpm install` hits `ENOENT`. Tracked as `FU-59` (Ectropy-Business register); the vendored copies are marked "do not edit, re-sync from core" pending a compiled-publish workflow here. `platform` and `Ectropy` carry their own independently-written packages of similar names (not core-derived) and don't vendor from `core` at all.
+- Packages ship TypeScript source, not compiled output. A compiled npm release is planned; until then the GitHub-pin install below suits development, not production builds.
 
 ## Packages
 
@@ -46,19 +46,11 @@ path (not `packages/sdk`) in any GitHub-pin install command.
 pnpm add "@ectropy/rls@github:ectropy-ai/core#v0.1.0&path:packages/rls"
 ```
 
-The only real consumption attempt on record (`Ectropy-Business`) hit this failing
-under Nx + Alpine Docker (see Status above) and fell back to vendoring instead —
-treat the GitHub-pin path as unproven in a production build until `FU-59` lands a
-compiled-publish workflow.
+The GitHub-pin install is unsupported in production builds until compiled packages are published.
 
-## Schema Dependency
+## What is open
 
-Planned, not yet wired: no package in this monorepo currently declares or
-imports [@ectropy/schemas](https://github.com/ectropy-ai/schemas) (verified
-2026-08-31 — zero `package.json` dependency entries, zero source imports).
-The intent is for core packages to consume types from it via GitHub pin,
-matching the pattern above; this section will be updated once that
-dependency is actually landed.
+Core holds general-purpose building blocks. The record shapes they work with are the open standard at [schemas.ectropy.ai](https://schemas.ectropy.ai/). The work done on a record (checking, comparing, predicting and proving it) is the Ectropy service and is not part of core.
 
 ## License
 
