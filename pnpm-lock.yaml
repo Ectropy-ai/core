@@ -11,8 +11,8 @@ importers:
   packages/ai-provider:
     dependencies:
       '@anthropic-ai/sdk':
-        specifier: ^0.128.0
-        version: 0.128.0
+        specifier: ^1.3.0
+        version: 1.3.0
     devDependencies:
       typescript:
         specifier: ^7.0.2
@@ -42,8 +42,8 @@ importers:
   packages/mcp-client:
     dependencies:
       axios:
-        specifier: ^1.20.0
-        version: 1.20.0
+        specifier: ^1.21.0
+        version: 1.21.0
     devDependencies:
       '@types/node':
         specifier: ^26.6.4
@@ -61,8 +61,8 @@ importers:
   packages/sdk-javascript:
     dependencies:
       axios:
-        specifier: ^1.20.0
-        version: 1.20.0
+        specifier: ^1.21.0
+        version: 1.21.0
     devDependencies:
       '@types/node':
         specifier: ^26.6.4
@@ -73,8 +73,8 @@ importers:
 
 packages:
 
-  '@anthropic-ai/sdk@0.128.0':
-    resolution: {integrity: sha512-tl5cBFZC1jVFrTuQyvQObA4WmuNgcYVeXfriqOumgtLAHUm4gPUj18YnszBW60v0PrjDB8nBDOC6wd9CmHQFlA==}
+  '@anthropic-ai/sdk@1.3.0':
+    resolution: {integrity: sha512-k7z9BlLLPxfZH+ov7dS6EnaN/wiZeV8YNT1LZfrpAHIy7oY7pHr4UzirF9f2OlHtFEnRBOX+AZQ91Y5fK+TPTw==}
     hasBin: true
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
@@ -82,9 +82,13 @@ packages:
       zod:
         optional: true
 
-  '@babel/runtime@7.29.7':
-    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
+  '@babel/runtime@7.29.10':
+    resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
     engines: {node: '>=6.9.0'}
+
+  '@opentelemetry/api@1.10.0':
+    resolution: {integrity: sha512-lMkyes8iHrG+mk6WH7X70MdCLI2RS0FwNBY1PyQ8UemaijE2m5mv5A0Niy3HtbYTFrgkUEQjFMXmSAk2hQDuPQ==}
+    engines: {node: '>=8.0.0'}
 
   '@stablelib/base64@1.0.1':
     resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
@@ -219,8 +223,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  axios@1.20.0:
-    resolution: {integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==}
+  axios@1.21.0:
+    resolution: {integrity: sha512-YCzXMB53Q9PZBsh7yN7wtapit4WepwcHS2fP8QhGsBxSz5YtgYobV7GGlWlAJi+RxfU77GQTQi2DSLUma42EYA==}
 
   call-bind-apply-helpers@1.0.2:
     resolution: {integrity: sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==}
@@ -266,8 +270,8 @@ packages:
   fast-sha256@1.3.0:
     resolution: {integrity: sha512-n11RGP/lrWEFI/bWdygLxhI+pVeo1ZYIVwvvPkW7azl/rOy+F3HYRZ2K5zeE9mmkhQppyv9sQFx0JM9UabnpPQ==}
 
-  follow-redirects@1.16.0:
-    resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
+  follow-redirects@1.16.2:
+    resolution: {integrity: sha512-/kVP2U8z596Ia0gwFrwyIeo74ta5aVmSeU1FfAUMAmcEP5EP7zydmag3SLiN64NaRKef3lxsq7i/g7ltJQDGow==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -349,12 +353,15 @@ packages:
 
 snapshots:
 
-  '@anthropic-ai/sdk@0.128.0':
+  '@anthropic-ai/sdk@1.3.0':
     dependencies:
+      '@opentelemetry/api': 1.10.0
       json-schema-to-ts: 3.1.1
       standardwebhooks: 1.1.1
 
-  '@babel/runtime@7.29.7': {}
+  '@babel/runtime@7.29.10': {}
+
+  '@opentelemetry/api@1.10.0': {}
 
   '@stablelib/base64@1.0.1': {}
 
@@ -430,9 +437,9 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios@1.20.0:
+  axios@1.21.0:
     dependencies:
-      follow-redirects: 1.16.0
+      follow-redirects: 1.16.2
       form-data: 4.0.6
       https-proxy-agent: 5.0.1
       proxy-from-env: 2.1.0
@@ -478,7 +485,7 @@ snapshots:
 
   fast-sha256@1.3.0: {}
 
-  follow-redirects@1.16.0: {}
+  follow-redirects@1.16.2: {}
 
   form-data@4.0.6:
     dependencies:
@@ -529,7 +536,7 @@ snapshots:
 
   json-schema-to-ts@3.1.1:
     dependencies:
-      '@babel/runtime': 7.29.7
+      '@babel/runtime': 7.29.10
       ts-algebra: 2.0.0
 
   math-intrinsics@1.1.0: {}
